@@ -1,0 +1,183 @@
+/* 
+    Document   : draft3
+    Created on : Jul 24, 2012, 1:18:08 PM
+    Author     : dabock
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+   background-color: #333;
+}
+
+#container {
+   width: 960px;
+   background-color: #fff;
+   margin: 0 auto; /* This makes the container centered on the body */
+   border: thick solid #05c100;
+}
+
+#topbar {
+   text-align: center;
+   border-bottom: thick solid #05c100;
+   float: left;
+   width: 960px;
+}
+
+#logo {
+   height: 125px;
+   width: 200px;
+   float: left;
+}
+
+#topbar p {
+   float: right;
+   font-family: Arial,Helvetica,clean,sans-serif;
+   font-size: small;
+   margin-right: 1.5em;
+}
+
+#topbar ul {
+   margin: 2.8em 1em 0; /* TODO kludge */
+   padding: 0;
+   height: 1em;
+   float: left;
+   width: 700px;
+}
+#topbar ul li {
+   list-style: none;
+   float: left;
+}
+#topbar ul li a {
+   display: block;
+   padding: 8px 20px;
+   background-color: #05c100;
+   color: #fff;
+   text-decoration: none;
+   font-family: Arial,Helvetica,sans-serif;
+   font-weight: bold;
+   font-size: large;
+   border-style: none solid none;
+   border-width: 0 2px 0;
+   border-color: white;
+}
+#topbar ul li a:hover {
+   background-color: #0e0;
+}
+#topbar ul li ul {
+   display: none; 
+   width: 12em;  /*Width to help Opera out */
+}
+#topbar ul li:hover ul, #topbar ul li.hover ul {
+   display: block;
+   position: absolute;
+   margin: 0;
+   padding: 0;
+}
+#topbar ul li:hover li, #topbar ul li.hover li {
+   float: none;
+}
+#topbar ul li:hover li a, #topbar ul li.hover li a {
+   border-bottom: 1px solid #fff;
+}
+
+
+#main {
+   display: block;
+   margin: 1em;
+   padding-top: 100px; /* TODO kludge */
+   font-family: Arial,Helvetica,clean,sans-serif;
+   font-size: small;
+}
+
+a:link, a:visited {
+   color: #060;
+}
+
+table {
+   border-collapse: collapse;
+}
+tr:hover {
+   background-color: #eee;
+}
+th, td {
+   border-bottom: 1px solid #000;
+   padding: 0.1em 0.5em;
+   height: 2em;
+}
+th {
+   background-color: #333;
+   color: #fff;
+}
+th a, th a:link, th a:visited {
+   color: #fff;
+   text-decoration: none;
+}
+td {
+   white-space: nowrap;
+}
+td.mine {
+   color: #fff;
+   background-color: #090;
+   font-weight: bold;
+}
+
+#teams th{
+   font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif;
+}
+
+#teams td {
+   border-left: 1px solid #333;
+   border-right: 1px solid #333;
+   text-align: center;
+   font-weight: bold;
+}
+
+#teams tr:hover {
+   background-color: transparent;
+}
+
+#flb {
+   margin: 15px auto;
+}
+
+input.filter, select.filter {
+   margin-left: 15px;
+}
+
+form.players {
+   background-color: #ccc;
+   padding: 20px 0;
+}
+
+.server_time {
+   font-size: 75%;
+   font-weight: normal;
+}
+
+h1 {
+   font-size: 1.5em;
+   margin-bottom: 0;
+   margin-top: 1.75em;
+}
+
+h2 {
+   font-size: 1.2em;
+   margin-bottom: 0;
+   margin-top: 1.25em;
+}
+
+.cling_to_above {
+   margin-top: 0;
+}
+
+p.message {
+   font-size: 137%;
+}
+p.message_credit {
+   font-size: 90%;
+}
+
+#p_join_league {
+   margin-top: 4.5em;
+}

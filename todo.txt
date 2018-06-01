@@ -1,0 +1,130 @@
+HIGH PRIORITY - before BAM League draft begins
+- DONE: Require integer bids (league option) (no! all leagues!)
+- DONE: Show user name at top of every page
+- DONE: Make fantasy team name and league a unique key
+- DONE: Prevent users from entering bid less than or equal to current high bid.
+- DONE: Make sure each bid is before auction end
+- DONE: Make sure users adhere to their dollar limits
+- DONE: Make sure bids are >= 1
+- DONE: Inform the user when he has been outbid by an automatic bid
+- DONE: At least link to login page
+- DONE: Ignore bid when same user, amount, league, player
+- DONE: Put link on "no bids to process" page
+- DONE: Have a "my team" table linked from top table
+- DONE: It lets you bid more than you have if someone else has max > your bid
+- DONE: Make sure nobody gets more than 15 players
+- DONE: Don't let users bid below their max
+- DONE: Make users confirm their bids
+- DONE: Show number of players in top table
+- DONE: Ajax!
+- DONE: Highlight my team in table.
+- DONE: Fix draft page so limited players are shown
+- DONE: Fix navigation bar
+- DONE: Make players page sortable
+- DONE: Make sure draft page sortability works
+- DONE: Make index.php usable
+- DONE: Set up "My Team" page
+- DONE: Handle missing league in get array better (see nav) (redirect to index.php)
+- DONE: Fix team links in draft page
+- DONE: Set draft times for BAM League, maybe in a reusable way
+- DONE: Get pop-ups to pop up on top (test in IE)
+- DONE: Pop-up should let you re-enter your bid if it was too low.
+- DONE: Figure out a way to show X players in draft page.
+- DONE: chat
+- DONE: Change league table to list and make it disappear when empty in index.php
+- DONE: Fix bug with only recent draftees counting in draft page team table
+- DONE: Gather info about users' browsers
+- DONE: Move server-specific information to config file
+- DONE: Move nav bar into top bar to the right of logo
+- DONE: Incorporate new green logo
+- DONE: Email outbid notices
+- Smarter Ajax
+- DONE: Put focus on new bid input box in popup
+- DONE: Put league name at top of every page
+- DONE: Log user agents
+- Log all outgoing e-mails
+- DONE: List players user has bid on, on team page
+
+MEDIUM PRIORITY
+- Remove ".00" from dollar amounts
+- DONE: Allow users to log in on any page
+- DONE: Allow users to join leagues
+- DONE: Show all errors together
+- Bid history link for each player
+- DONE: Make tables sortable
+- Link to explanation of each team's dollars committed from top table
+- Switch all SQL to PDO
+- Assess the $print_ended function. Should where clause be used instead?
+- &sort=...&sort=...&sort=...
+- Fix insert per Stack Overflow advice
+- Fix display of 14+ teams in the draft page
+- Don't let people view league pages if they are not in that league
+- Determine if user_already_in_db needs to run where it's running.
+- Make sure the commissioner is a member of the league.
+- Tell users what their current working league is.
+- Test other browsers.
+- Allow sorting in both directions
+- Links from league page to team pages
+- Make teams and budgets table not query once a second.
+- Put team names at the top of team tables
+- Drop-down on team page to view other teams
+- Fix bug where cookie times out while bid table is auto-refreshing
+- Make nav bar cling to border below it.
+- Put teams and budgets on every page.
+- http://www.codinghorror.com/blog/2010/04/so-youd-like-to-send-some-email-through-code.html
+- Preferences page with preference for confirming bids
+
+LOW PRIORITY
+- Other sports
+- Move database connections to central location
+- Stress test
+- Make team bid table more efficient
+- Handle multiple bids inserted at same time exception
+- Show user picture at top of every page
+- unhardcode "200" from draft_insert.php
+- Allow commissioners to create leagues
+- Clean up functions.php database connections.
+- Unhardcode "12" in set_times.php
+- Have current and completed bid tables sort independently
+- Get every page to pass validator.w3.org
+- Add "show my team" to players page like Yahoo
+- Make league a SESSION variable instead of a GET
+- Pop-up notice of ended auctions
+- Team logos
+
+New smarter Ajax:
+1. Call function with parameter 0
+2. Function downloads last_update.php
+2a. Offset = server time minus local time
+3. Function compares parameter with last_update.php
+4. If less than, then download new bid table
+5. If equal to, then js updates times on page
+6. If greater than, then something has gone wrong.
+7. Wait 1 second, then call function with parameter from last_update.php.
+
+The new place_bid.php:
+- 1. Insert any new bid
+- 2. Show result of new bid
+- 3. Lookup data based on GET player ID
+- 4. Form posts new bid to place_bid.php
+- Show my dollars available
+
+Differences between dev and prod:
+- Facebook app id (in two places)
+- Facebook app secret
+- css ?reload flag
+- Address to channel file 
+
+Run checks on bids first. exit with error if any are bad.
+For each player:
+   if I'm not entering a bid, then no change to dollars committed.
+   if I am entering a bid:
+      if I'm the current high bidder, then amt added is new bid - old max
+      if I'm not the current high bidder:
+         if new bid <= old max, amount added is 0
+         else amount added is new bid.
+
+If the amount is set:
+   trim it
+   if it's != ''
+      enforce checks
